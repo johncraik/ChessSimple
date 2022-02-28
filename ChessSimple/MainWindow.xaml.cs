@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,22 @@ namespace ChessSimple
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Btn_StartStop_Click(object sender, RoutedEventArgs e)
+        {
+
+            
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void Btn_Quit_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

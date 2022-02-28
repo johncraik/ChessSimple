@@ -9,7 +9,7 @@
     <!--Main Grid:-->
     <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="15,17,15,17.04">
         <!--Navigation Panel:-->
-        <Grid  HorizontalAlignment="Left" Width="820">
+        <Grid  HorizontalAlignment="Left" Width="820" Margin="0,5,0,5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
@@ -17,8 +17,10 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="160"/>
                 <RowDefinition Height="2*"/>
-                <RowDefinition Height="120"/>
-                <RowDefinition Height="120"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="130"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="130"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -62,12 +64,12 @@
                    FontSize="30" FontFamily="Global User Interface" FontWeight="Bold" Grid.Row="4"/>
 
                 <StackPanel Grid.Row="5">
-                    <RadioButton HorizontalAlignment="Stretch" VerticalContentAlignment="Center" 
+                    <RadioButton Name="Rb_Wply1" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" 
                              Margin="0,5,5,5" FontFamily="Global User Interface" FontSize="30" 
-                             Content="White" IsChecked="True"/>
-                    <RadioButton Grid.Row="2" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" 
+                             Content="White" IsChecked="True" Checked="RadioButton_Checked"/>
+                    <RadioButton Name="Rb_Bply1" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" 
                              Margin="0,5,5,5" FontFamily="Global User Interface" FontSize="30" 
-                             Content="Black"/>
+                             Content="Black" Checked="RadioButton_Checked"/>
                 </StackPanel>
             </Grid>
 
@@ -108,14 +110,23 @@
                    FontSize="30" FontFamily="Global User Interface" FontWeight="Bold" Grid.Row="4"/>
 
                 <StackPanel Grid.Row="5">
-                    <RadioButton HorizontalAlignment="Stretch" VerticalContentAlignment="Center" 
+                    <RadioButton Name="Rb_Wply2" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" 
                              Margin="0,5,5,5" FontFamily="Global User Interface" FontSize="30" 
-                             Content="White"/>
-                    <RadioButton Grid.Row="2" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" 
+                             Content="White" Checked="RadioButton_Checked"/>
+                    <RadioButton Name="Rb_Bply2" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" 
                              Margin="0,5,5,5" FontFamily="Global User Interface" FontSize="30" 
-                             Content="Black" IsChecked="True"/>
+                             Content="Black" IsChecked="True" Checked="RadioButton_Checked"/>
                 </StackPanel>
             </Grid>
+            
+            <!--Buttons:-->
+            <Button Name="Btn_StartStop" Grid.Row="3" Grid.ColumnSpan="2" Content="Start Game" 
+                    FontFamily="Global User Interface" FontWeight="Bold" FontSize="50" 
+                    BorderThickness="2" Click="Btn_StartStop_Click"/>
+            <Button Name="Btn_Quit" Grid.Row="5" Grid.ColumnSpan="2" Content="Quit Game" 
+                    FontFamily="Global User Interface" FontWeight="Bold" FontSize="50" 
+                    BorderThickness="2" Click="Btn_Quit_Click"/>
+
         </Grid>
 
         <!--Board-->
