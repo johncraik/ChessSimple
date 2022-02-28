@@ -131,7 +131,68 @@
 
         <!--Board-->
         <Grid HorizontalAlignment="Right" Width="1030">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <!--Squares:-->
+            <Canvas Background="#FFDEDEDE" Grid.RowSpan="8" Grid.ColumnSpan="8"/>
+            <Canvas Grid.Row="1" Background="#FF4C2215"/>
+            <Canvas Grid.Row="3" Background="#FF4C2215"/>
+            <Canvas Grid.Row="5" Background="#FF4C2215"/>
+            <Canvas Grid.Row="7" Background="#FF4C2215"/>
+            <Canvas Grid.Row="0" Grid.Column="1" Background="#FF4C2215"/>
+            <Canvas Grid.Row="2" Grid.Column="1" Background="#FF4C2215"/>
+            <Canvas Grid.Row="4" Grid.Column="1" Background="#FF4C2215"/>
+            <Canvas Grid.Row="6" Grid.Column="1" Background="#FF4C2215"/>
+            <Canvas Grid.Row="1" Grid.Column="2" Background="#FF4C2215"/>
+            <Canvas Grid.Row="3" Grid.Column="2" Background="#FF4C2215"/>
+            <Canvas Grid.Row="5" Grid.Column="2" Background="#FF4C2215"/>
+            <Canvas Grid.Row="7" Grid.Column="2" Background="#FF4C2215"/>
+            <Canvas Grid.Row="0" Grid.Column="3" Background="#FF4C2215"/>
+            <Canvas Grid.Row="2" Grid.Column="3" Background="#FF4C2215"/>
+            <Canvas Grid.Row="4" Grid.Column="3" Background="#FF4C2215"/>
+            <Canvas Grid.Row="6" Grid.Column="3" Background="#FF4C2215"/>
+            <Canvas Grid.Row="1" Grid.Column="4" Background="#FF4C2215"/>
+            <Canvas Grid.Row="3" Grid.Column="4" Background="#FF4C2215"/>
+            <Canvas Grid.Row="5" Grid.Column="4" Background="#FF4C2215"/>
+            <Canvas Grid.Row="7" Grid.Column="4" Background="#FF4C2215"/>
+            <Canvas Grid.Row="0" Grid.Column="5" Background="#FF4C2215"/>
+            <Canvas Grid.Row="2" Grid.Column="5" Background="#FF4C2215"/>
+            <Canvas Grid.Row="4" Grid.Column="5" Background="#FF4C2215"/>
+            <Canvas Grid.Row="6" Grid.Column="5" Background="#FF4C2215"/>
+            <Canvas Grid.Row="1" Grid.Column="6" Background="#FF4C2215"/>
+            <Canvas Grid.Row="3" Grid.Column="6" Background="#FF4C2215"/>
+            <Canvas Grid.Row="5" Grid.Column="6" Background="#FF4C2215"/>
+            <Canvas Grid.Row="7" Grid.Column="6" Background="#FF4C2215"/>
+            <Canvas Grid.Row="0" Grid.Column="7" Background="#FF4C2215"/>
+            <Canvas Grid.Row="2" Grid.Column="7" Background="#FF4C2215"/>
+            <Canvas Grid.Row="4" Grid.Column="7" Background="#FF4C2215"/>
+            <Canvas Grid.Row="6" Grid.Column="7" Background="#FF4C2215"/>
+            
+            <!--Border:-->
+            <Border Grid.RowSpan="8" Grid.ColumnSpan="8" BorderBrush="Black" BorderThickness="2"/>
 
+            
+            
+            
         </Grid>
     </Grid>
 </Window>

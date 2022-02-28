@@ -39,6 +39,7 @@ namespace ChessSimple
 
         private void Btn_Quit_Click(object sender, RoutedEventArgs e)
         {
+            //Quit the app if they click 'Yes' on the message box.
             if (MessageBox.Show("Are you sure you want to quit?", "Quit Game", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 this.Close();
