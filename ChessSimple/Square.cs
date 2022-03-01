@@ -15,7 +15,7 @@ namespace ChessSimple
         private ChessPiece piece;
 
         /// <summary>
-        /// Constructor to define a new square.
+        /// Initialise a new sqaure.
         /// </summary>
         /// <param name="active"></param>
         /// <param name="sqr"></param>
