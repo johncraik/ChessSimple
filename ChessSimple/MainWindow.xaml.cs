@@ -28,7 +28,11 @@ namespace ChessSimple
 
         private void Btn_StartStop_Click(object sender, RoutedEventArgs e)
         {
+            Pawn newPawn = new Pawn(0, new Point(0, 6), true, false);
+            MessageBox.Show(newPawn.ToString());
 
+            ChessPiece king = new ChessPiece(new Point(3, 7));
+            MessageBox.Show(king.ToString());
             
         }
 

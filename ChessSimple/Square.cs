@@ -52,7 +52,7 @@ namespace ChessSimple
         /// <returns></returns>
         public int getX()
         {
-            return (int) index.X;
+            return Convert.ToInt32(index.X);
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace ChessSimple
         /// <returns></returns>
         public int getY()
         {
-            return (int) index.Y;
+            return Convert.ToInt32(index.Y);
         }
 
         /// <summary>

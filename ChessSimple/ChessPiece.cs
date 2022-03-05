@@ -30,12 +30,35 @@ namespace ChessSimple
         }
 
         /// <summary>
+        /// Get the X index for the chess piece.
+        /// </summary>
+        /// <returns></returns>
+        public int getX()
+        {
+            return Convert.ToInt32(index.X);
+        }
+
+        /// <summary>
+        /// Get the Y index for the chess piece.
+        /// </summary>
+        /// <returns></returns>
+        public int getY()
+        {
+            return Convert.ToInt32(index.Y);
+        }
+
+        /// <summary>
         /// Set the XY index of the chess piece. (-1,-1) if not on board.
         /// </summary>
         /// <param name="index"></param>
         public void setIndex(Point index)
         {
             this.index = index;
+        }
+
+        public override string ToString()
+        {
+            return ("Chess piece with position: (" + getIndex() + ")");
         }
     }
 }
