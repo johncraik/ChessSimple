@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ChessSimple
 {
@@ -35,6 +36,25 @@ namespace ChessSimple
         public void setActive(bool active)
         {
             this.active = active;
+        }
+
+
+        public static ChessPiece[,] createGame(bool ply1)
+        {
+            ChessPiece[,] board = new ChessPiece[8,8];
+
+            //Create player 1 (ply1) pieces on the left side.
+            int x = 1;
+            int y = 0;
+
+            //Add pawns:
+            for (int i = 0; i < 8; i++)
+            {
+                board[x, y] = new Pawn(new Point(x,y), ply1, i, true, false);
+                y++;
+            }
+
+            return board;
         }
     }
 }
