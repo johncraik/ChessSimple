@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 
 namespace ChessSimple
 {
@@ -21,7 +22,7 @@ namespace ChessSimple
         /// <param name="index"></param>
         /// <param name="atStart"></param>
         /// <param name="atEnd"></param>
-        public Pawn(int id, Point index, bool atStart, bool atEnd) : base(index)
+        public Pawn(Point index, bool isWhite, int id, bool atStart, bool atEnd) : base(index, isWhite)
         {
             this.id = id;
             this.atStart = atStart;
@@ -106,7 +107,13 @@ namespace ChessSimple
         /// <returns></returns>
         public override string ToString()
         {
-            return ("Pawn #" + this.id + " is at position: (" + getX() + ", " + getY() + ") " +
+            string col = "White";
+            if (getIsWhite() == false)
+            {
+                col = "Black";
+            }
+
+            return (col + " Pawn #" + this.id + " is at position: (" + getX() + ", " + getY() + ") " +
                 "and can move a maximum of: " + this.maxMove + ". " +
                 "At starting pos: " + this.atStart + ". " +
                 "Reached end pos: " + this.atEnd);
