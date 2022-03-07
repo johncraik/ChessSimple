@@ -56,6 +56,10 @@ namespace ChessSimple
             this.index = index;
         }
 
+        /// <summary>
+        /// Output limited information on the chess piece.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return ("Chess piece with position: (" + getIndex() + ")");
