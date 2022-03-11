@@ -44,10 +44,21 @@ namespace ChessSimple
             ChessPiece[,] board = new ChessPiece[8,8];
 
             //Create player 1 (ply1) pieces on the left side.
-            int x = 1;
-            int y = 0;
+            int x = 0; int y = 0;
+            int rook = 0; int knight = 0; int bishop = 0;
+
+            board[x, y] = new Rook(new Point(x, y), ply1, rook); rook++; y++;       //Rook
+            board[x, y] = new Knight(new Point(x, y), ply1, knight); knight++; y++; //Knight
+            board[x, y] = new Bishop(new Point(x, y), ply1, bishop); bishop++; y++; //Bishop
+            board[x, y] = new Queen(new Point(x, y), ply1, 0); y++;                 //Queen
+            board[x, y] = new King(new Point(x, y), ply1, 0, false, false); y++;    //King
+            board[x, y] = new Bishop(new Point(x, y), ply1, bishop); bishop++; y++; //Bishop
+            board[x, y] = new Knight(new Point(x, y), ply1, knight); knight++; y++; //Knight
+            board[x, y] = new Rook(new Point(x, y), ply1, rook); rook++; y++;       //Rook
+
 
             //Add pawns:
+            x = 1; y = 0;
             for (int i = 0; i < 8; i++)
             {
                 board[x, y] = new Pawn(new Point(x,y), ply1, i, true, false);
