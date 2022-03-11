@@ -7,24 +7,24 @@ using System.Windows;
 
 namespace ChessSimple
 {
-    internal class Bishop : ChessPiece
+    internal class Rook : ChessPiece
     {
         private int id;
 
         /// <summary>
-        /// Initialise new bishop.
+        /// Initialise new rook.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="index"></param>
         /// <param name="atStart"></param>
         /// <param name="atEnd"></param>
-        public Bishop(Point index, bool isWhite, int id) : base(index, isWhite)
+        public Rook(Point index, bool isWhite, int id) : base(index, isWhite)
         {
             this.id = id; 
         }
 
         /// <summary>
-        /// Get the bishop ID
+        /// Get the rook ID
         /// </summary>
         /// <returns></returns>
         public int getID()
@@ -33,7 +33,7 @@ namespace ChessSimple
         }
 
         /// <summary>
-        /// Output bishop information as a string.
+        /// Output rook information as a string.
         /// </summary>
         /// <returns></returns>
         public override string ToString()
@@ -44,7 +44,7 @@ namespace ChessSimple
                 col = "Black";
             }
 
-            return (col + " Bishop #" + this.id + " is at position: (" + getX() + ", " + getY() + ")");
+            return (col + " rook #" + this.id + " is at position: (" + getX() + ", " + getY() + ")");
         }
     }
 }
