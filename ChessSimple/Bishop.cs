@@ -46,5 +46,40 @@ namespace ChessSimple
 
             return (col + " Bishop #" + this.id + " is at position: (" + getX() + ", " + getY() + ")");
         }
+
+
+        public bool[,] moveBishop(ChessPiece[,] board)
+        {
+            //Get the X and Y of the current bishop.
+            int pX = this.getX();
+            int pY = this.getY();
+            bool[,] moveable = new bool[8, 8];
+
+            int i = 0; int j = 0; int k = 1;
+            foreach (ChessPiece p in board)
+            {
+                //Loop through the board.
+                if (p == null)
+                {
+
+                }
+
+                //Increment Y axis:
+                j++;
+                if (j == 8)
+                {
+                    //If at the end of the board (j = 8),
+                    //THEN reset the Y axis and increment the X axis.
+                    j = 0;
+                    i++;
+                }
+
+                //Reset k:
+                k = i + j;
+            }
+
+            //Return the 2D bool array of possible moveable spaces for the bishop.
+            return moveable;
+        }
     }
 }

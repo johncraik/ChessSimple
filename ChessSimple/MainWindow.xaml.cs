@@ -34,8 +34,13 @@ namespace ChessSimple
             ChessPiece king = new ChessPiece(new Point(3, 7), true);
             MessageBox.Show(king.ToString());
 
-            Board.createGame(true);
+            ChessPiece[,] board = Board.createGame(true);
+            Pawn test = (Pawn) board[1, 4];
+
+            test.movePawn(board);
+
             
+
         }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)

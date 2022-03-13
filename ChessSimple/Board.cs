@@ -91,9 +91,6 @@ namespace ChessSimple
             board[x, y] = new Knight(new Point(x, y), ply2, knight); knight++; y++; //Knight
             board[x, y] = new Rook(new Point(x, y), ply2, rook); rook++; y++;       //Rook
 
-
-            
-
             return board;
         }
     }

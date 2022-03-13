@@ -118,5 +118,54 @@ namespace ChessSimple
                 "At starting pos: " + this.atStart + ". " +
                 "Reached end pos: " + this.atEnd);
         }
+
+
+        public bool[,] movePawn(ChessPiece[,] board)
+        {
+            //Get the X and Y of the current pawn.
+            int pX = this.getX();
+            int pY = this.getY();
+            bool[,] moveable = new bool[8, 8];
+
+            int i = 0; int j = 0;
+            foreach(ChessPiece p in board)
+            {
+                //Loop through the board.
+                if (p != null && (i == pX + 1 || i == pX -1) && (j == pY -1 || j == pY +1))
+                {
+                    //If the chess piece is NOT null (occupied space)
+                    //AND if the X is one to left OR right
+                    //AND if the Y is one to top OR bottom
+                    //THEN the pawn can move there (take the piece)
+                    moveable[i, j] = true;
+                }
+                else if (p == null && ((i == pX + maxMove || i == pX - maxMove) && j == pY))
+                {
+                    //If the chess piece is null (empty space)
+                    //AND the X is one or two (max) to the left OR right
+                    //AND the Y is equal to the Y of the pawn
+                    //THEN the pawn can move there (move to an empty space in front)
+                    moveable[i, j] = true;
+                }
+                else
+                {
+                    //OTHERWISE the pawn CANNOT move.
+                    moveable[i, j] = false;
+                }
+
+                //Increment Y axis:
+                j++;
+                if (j == 8)
+                {
+                    //If at the end of the board (j = 8),
+                    //THEN reset the Y axis and increment the X axis.
+                    j = 0;
+                    i++;
+                }
+            }          
+
+            //Return the 2D bool array of possible moveable spaces for the pawn.
+            return moveable;
+        }
     }
 }
