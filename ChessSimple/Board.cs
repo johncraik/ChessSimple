@@ -62,7 +62,7 @@ namespace ChessSimple
             x = 1; y = 0;
             for (int i = 0; i < 8; i++)
             {
-                board[x, y] = new Pawn(new Point(x,y), ply1, i, true, false);
+                board[x, y] = new Pawn(new Point(x,y), ply1, i, true, true, false);
                 y++;
             }
 
@@ -74,7 +74,7 @@ namespace ChessSimple
             x = 6; y = 0;
             for (int i = 0; i < 8; i++)
             {
-                board[x, y] = new Pawn(new Point(x, y), ply2, i, true, false);
+                board[x, y] = new Pawn(new Point(x, y), ply2, i, false, true, false);
                 y++;
             }
 
