@@ -187,6 +187,11 @@
             <Canvas Grid.Row="4" Grid.Column="7" Background="#FF4C2215"/>
             <Canvas Grid.Row="6" Grid.Column="7" Background="#FF4C2215"/>
             
+            <!--Chess Pieces-->
+            <Button Grid.Column="0" Grid.Row="0" Background="{x:Null}">
+                <TextBlock Text="{x:Static local:Icons.blk_Rook}" FontFamily="30"/>
+            </Button>
+            
             <!--Border:-->
             <Border Grid.RowSpan="8" Grid.ColumnSpan="8" BorderBrush="Black" BorderThickness="2"/>
 

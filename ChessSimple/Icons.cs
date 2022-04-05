@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChessSimple
 {
-    internal static class Icons
+    public static class Icons
     {
         public const string blk_Pawn = "\u265f";
         public const string blk_Rook = "\u265c";
