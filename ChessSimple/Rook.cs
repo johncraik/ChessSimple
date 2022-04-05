@@ -61,7 +61,7 @@ namespace ChessSimple
                 //Loop through the board.
                 if (i == pX || j == pY)
                 {
-
+                    moveable[i, j] = true;
                 }
 
 
