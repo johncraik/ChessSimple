@@ -37,11 +37,6 @@ namespace ChessSimple
 
         }
 
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
         private void Btn_Quit_Click(object sender, RoutedEventArgs e)
         {
             //Quit the app if they click 'Yes' on the message box.
