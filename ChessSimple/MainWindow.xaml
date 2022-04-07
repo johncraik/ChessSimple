@@ -63,13 +63,13 @@
                    VerticalAlignment="Top" Height="72" Width="400" 
                    FontSize="30" FontFamily="Global User Interface" FontWeight="Bold" Grid.Row="4"/>
 
-                <StackPanel Grid.Row="5">
-                    <RadioButton Name="Rb_Wply1" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" 
+                <StackPanel x:Name="Sp_Ply1" Grid.Row="5">
+                    <CheckBox Name="Rb_Wply1" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" 
                              Margin="0,5,5,5" FontFamily="Global User Interface" FontSize="30" 
-                             Content="White" IsChecked="True"/>
-                    <RadioButton Name="Rb_Bply1" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" 
+                             Content="White" IsChecked="True" Click="Rb_Wply1_Click"/>
+                    <CheckBox Name="Rb_Bply1" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" 
                              Margin="0,5,5,5" FontFamily="Global User Interface" FontSize="30" 
-                             Content="Black"/>
+                             Content="Black" Click="Rb_Bply1_Click"/>
                 </StackPanel>
             </Grid>
 
@@ -109,13 +109,13 @@
                    VerticalAlignment="Top" Height="72" Width="400" 
                    FontSize="30" FontFamily="Global User Interface" FontWeight="Bold" Grid.Row="4"/>
 
-                <StackPanel Grid.Row="5">
-                    <RadioButton Name="Rb_Wply2" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" 
+                <StackPanel x:Name="Sp_Ply2" Grid.Row="5">
+                    <CheckBox Name="Rb_Wply2" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" 
                              Margin="0,5,5,5" FontFamily="Global User Interface" FontSize="30" 
-                             Content="White"/>
-                    <RadioButton Name="Rb_Bply2" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" 
+                             Content="White" Click="Rb_Wply2_Click"/>
+                    <CheckBox Name="Rb_Bply2" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" 
                              Margin="0,5,5,5" FontFamily="Global User Interface" FontSize="30" 
-                             Content="Black" IsChecked="True"/>
+                             Content="Black" IsChecked="True" Click="Rb_Bply2_Click"/>
                 </StackPanel>
             </Grid>
             

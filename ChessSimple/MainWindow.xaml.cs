@@ -45,5 +45,77 @@ namespace ChessSimple
                 this.Close();
             }
         }
+
+        private void Rb_Wply1_Click(object sender, RoutedEventArgs e)
+        {
+            if(Rb_Wply1.IsChecked == true)
+            {
+                Rb_Bply1.IsChecked = false;
+
+                Rb_Wply2.IsChecked = false;
+                Rb_Bply2.IsChecked = true;
+            }
+            else
+            {
+                Rb_Bply1.IsChecked = true;
+
+                Rb_Wply2.IsChecked = true;
+                Rb_Bply2.IsChecked = false;
+            }
+        }
+
+        private void Rb_Bply1_Click(object sender, RoutedEventArgs e)
+        {
+            if (Rb_Bply1.IsChecked == true)
+            {
+                Rb_Wply1.IsChecked = false;
+
+                Rb_Bply2.IsChecked = false;
+                Rb_Wply2.IsChecked = true;
+            }
+            else
+            {
+                Rb_Wply1.IsChecked = true;
+
+                Rb_Bply2.IsChecked = true;
+                Rb_Wply2.IsChecked = false;
+            }
+        }
+
+        private void Rb_Wply2_Click(object sender, RoutedEventArgs e)
+        {
+            if (Rb_Wply2.IsChecked == true)
+            {
+                Rb_Bply2.IsChecked = false;
+
+                Rb_Wply1.IsChecked = false;
+                Rb_Bply1.IsChecked = true;
+            }
+            else
+            {
+                Rb_Bply2.IsChecked = true;
+
+                Rb_Wply1.IsChecked = true;
+                Rb_Bply1.IsChecked = false;
+            }
+        }
+
+        private void Rb_Bply2_Click(object sender, RoutedEventArgs e)
+        {
+            if (Rb_Bply2.IsChecked == true)
+            {
+                Rb_Wply2.IsChecked = false;
+
+                Rb_Bply1.IsChecked = false;
+                Rb_Wply1.IsChecked = true;
+            }
+            else
+            {
+                Rb_Wply2.IsChecked = true;
+
+                Rb_Bply1.IsChecked = true;
+                Rb_Wply1.IsChecked = false;
+            }
+        }
     }
 }
