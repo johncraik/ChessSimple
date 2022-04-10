@@ -45,7 +45,7 @@
                 </Grid.RowDefinitions>
                 
                 <!--Heading:-->
-                <Label Content="Player 1:" HorizontalAlignment="Left" Margin="0,5,0,5" 
+                <Label Content="Player 1 (L):" HorizontalAlignment="Left" Margin="0,5,0,5" 
                    VerticalAlignment="Top" Height="72" Width="400" 
                    FontSize="50" FontFamily="Global User Interface" FontWeight="Bold" Grid.Row="0"/>
 
@@ -91,7 +91,7 @@
                 </Grid.RowDefinitions>
 
                 <!--Heading:-->
-                <Label Content="Player 2:" HorizontalAlignment="Left" Margin="0,5,0,5" 
+                <Label Content="Player 2 (R):" HorizontalAlignment="Left" Margin="0,5,0,5" 
                    VerticalAlignment="Top" Height="72" Width="400" 
                    FontSize="50" FontFamily="Global User Interface" FontWeight="Bold" Grid.Row="0"/>
 
@@ -153,121 +153,122 @@
             </Grid.RowDefinitions>
             
             <!--Squares:-->
-            <Canvas Background="{x:Static local:Resources.wht_Board}" Grid.RowSpan="8" Grid.ColumnSpan="8"/>
-            <Canvas Grid.Row="1" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="3" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="5" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="7" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="0" Grid.Column="1" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="2" Grid.Column="1" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="4" Grid.Column="1" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="6" Grid.Column="1" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="1" Grid.Column="2" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="3" Grid.Column="2" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="5" Grid.Column="2" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="7" Grid.Column="2" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="0" Grid.Column="3" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="2" Grid.Column="3" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="4" Grid.Column="3" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="6" Grid.Column="3" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="1" Grid.Column="4" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="3" Grid.Column="4" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="5" Grid.Column="4" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="7" Grid.Column="4" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="0" Grid.Column="5" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="2" Grid.Column="5" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="4" Grid.Column="5" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="6" Grid.Column="5" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="1" Grid.Column="6" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="3" Grid.Column="6" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="5" Grid.Column="6" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="7" Grid.Column="6" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="0" Grid.Column="7" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="2" Grid.Column="7" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="4" Grid.Column="7" Background="{x:Static local:Resources.blk_Board}"/>
-            <Canvas Grid.Row="6" Grid.Column="7" Background="{x:Static local:Resources.blk_Board}"/>
+            <Canvas Background="{x:Static local:Res.wht_Board}" Grid.RowSpan="8" Grid.ColumnSpan="8"/>
+            <Canvas Grid.Row="1" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="3" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="5" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="7" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="0" Grid.Column="1" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="2" Grid.Column="1" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="4" Grid.Column="1" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="6" Grid.Column="1" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="1" Grid.Column="2" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="3" Grid.Column="2" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="5" Grid.Column="2" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="7" Grid.Column="2" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="0" Grid.Column="3" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="2" Grid.Column="3" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="4" Grid.Column="3" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="6" Grid.Column="3" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="1" Grid.Column="4" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="3" Grid.Column="4" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="5" Grid.Column="4" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="7" Grid.Column="4" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="0" Grid.Column="5" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="2" Grid.Column="5" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="4" Grid.Column="5" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="6" Grid.Column="5" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="1" Grid.Column="6" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="3" Grid.Column="6" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="5" Grid.Column="6" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="7" Grid.Column="6" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="0" Grid.Column="7" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="2" Grid.Column="7" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="4" Grid.Column="7" Background="{x:Static local:Res.blk_Board}"/>
+            <Canvas Grid.Row="6" Grid.Column="7" Background="{x:Static local:Res.blk_Board}"/>
             
             <!--Chess Pieces-->
             <!--Player 1:-->
             <Button x:Name="Btn_Ply1Rook1" Grid.Column="0" Grid.Row="0" Background="{x:Null}" BorderBrush="{x:Null}" >
-                <!--Rook Top:--><TextBlock x:Name="Txt_Ply1Rook1" Text="{x:Static local:Resources.blk_Rook}" 
+                <!--Rook Top:-->
+                <TextBlock x:Name="Txt_Ply1Rook1" Text="{x:Static local:Res.blk_Rook}" 
                            FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply1Knight1" Grid.Column="0" Grid.Row="1" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Knight Top:-->
-                <TextBlock x:Name="Txt_Ply1Knight1" Text="{x:Static local:Resources.blk_Knight}" 
+                <TextBlock x:Name="Txt_Ply1Knight1" Text="{x:Static local:Res.blk_Knight}" 
                            FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply1Bishop1" Grid.Column="0" Grid.Row="2" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Bishop Top:-->
-                <TextBlock x:Name="Txt_Ply1Bishop1" Text="{x:Static local:Resources.blk_Bishop}" 
+                <TextBlock x:Name="Txt_Ply1Bishop1" Text="{x:Static local:Res.blk_Bishop}" 
                            FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply1Queen" Grid.Column="0" Grid.Row="3" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Queen:-->
-                <TextBlock x:Name="Txt_Ply1Queen" Text="{x:Static local:Resources.blk_Queen}" 
+                <TextBlock x:Name="Txt_Ply1Queen" Text="{x:Static local:Res.blk_Queen}" 
                            FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply1King" Grid.Column="0" Grid.Row="4" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--King:-->
-                <TextBlock x:Name="Txt_Ply1King" Text="{x:Static local:Resources.blk_King}" 
+                <TextBlock x:Name="Txt_Ply1King" Text="{x:Static local:Res.blk_King}" 
                            FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply1Bishop2" Grid.Column="0" Grid.Row="5" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Bishop Bottom:-->
-                <TextBlock x:Name="Txt_Ply1Bishop2" Text="{x:Static local:Resources.blk_Bishop}" 
+                <TextBlock x:Name="Txt_Ply1Bishop2" Text="{x:Static local:Res.blk_Bishop}" 
                            FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply1Knight2" Grid.Column="0" Grid.Row="6" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Knight Bottom:-->
-                <TextBlock x:Name="Txt_Ply1Knight2" Text="{x:Static local:Resources.blk_Knight}" 
+                <TextBlock x:Name="Txt_Ply1Knight2" Text="{x:Static local:Res.blk_Knight}" 
                            FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply1Rook2" Grid.Column="0" Grid.Row="7" Background="{x:Null}" BorderBrush="{x:Null}">
                 <!--Rook Bottom:-->
-                <TextBlock x:Name="Txt_Ply1Rook2" Text="{x:Static local:Resources.blk_Rook}" 
+                <TextBlock x:Name="Txt_Ply1Rook2" Text="{x:Static local:Res.blk_Rook}" 
                            FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
 
             <!--Pawns:-->
             <Button x:Name="Btn_Ply1Pawn0" Grid.Column="1" Grid.Row="0" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Pawn 0:-->
-                <TextBlock x:Name="Txt_Ply1Pawn0" Text="{x:Static local:Resources.blk_Pawn}" 
+                <TextBlock x:Name="Txt_Ply1Pawn0" Text="{x:Static local:Res.blk_Pawn}" 
                            FontSize="70" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply1Pawn1" Grid.Column="1" Grid.Row="1" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Pawn 1:-->
-                <TextBlock x:Name="Txt_Ply1Pawn1" Text="{x:Static local:Resources.blk_Pawn}" 
+                <TextBlock x:Name="Txt_Ply1Pawn1" Text="{x:Static local:Res.blk_Pawn}" 
                            FontSize="70" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply1Pawn2" Grid.Column="1" Grid.Row="2" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Pawn 2:-->
-                <TextBlock x:Name="Txt_Ply1Pawn2" Text="{x:Static local:Resources.blk_Pawn}" 
+                <TextBlock x:Name="Txt_Ply1Pawn2" Text="{x:Static local:Res.blk_Pawn}" 
                            FontSize="70" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply1Pawn3" Grid.Column="1" Grid.Row="3" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Pawn 3:-->
-                <TextBlock x:Name="Txt_Ply1Pawn3" Text="{x:Static local:Resources.blk_Pawn}" 
+                <TextBlock x:Name="Txt_Ply1Pawn3" Text="{x:Static local:Res.blk_Pawn}" 
                            FontSize="70" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply1Pawn4" Grid.Column="1" Grid.Row="4" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Pawn 4:-->
-                <TextBlock x:Name="Txt_Ply1Pawn4" Text="{x:Static local:Resources.blk_Pawn}" 
+                <TextBlock x:Name="Txt_Ply1Pawn4" Text="{x:Static local:Res.blk_Pawn}" 
                            FontSize="70" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply1Pawn5" Grid.Column="1" Grid.Row="5" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Pawn 5:-->
-                <TextBlock x:Name="Txt_Ply1Pawn5" Text="{x:Static local:Resources.blk_Pawn}" 
+                <TextBlock x:Name="Txt_Ply1Pawn5" Text="{x:Static local:Res.blk_Pawn}" 
                            FontSize="70" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply1Pawn6" Grid.Column="1" Grid.Row="6" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Pawn 6:-->
-                <TextBlock x:Name="Txt_Ply1Pawn6" Text="{x:Static local:Resources.blk_Pawn}" 
+                <TextBlock x:Name="Txt_Ply1Pawn6" Text="{x:Static local:Res.blk_Pawn}" 
                            FontSize="70" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply1Pawn7" Grid.Column="1" Grid.Row="7" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Pawn 7:-->
-                <TextBlock x:Name="Txt_Ply1Pawn7" Text="{x:Static local:Resources.blk_Pawn}" 
+                <TextBlock x:Name="Txt_Ply1Pawn7" Text="{x:Static local:Res.blk_Pawn}" 
                            FontSize="70" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
 
@@ -276,83 +277,83 @@
             <!--Pawns:-->
             <Button x:Name="Btn_Ply2Pawn0" Grid.Column="6" Grid.Row="0" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Pawn 0:-->
-                <TextBlock x:Name="Txt_Ply2Pawn0" Text="{x:Static local:Resources.wht_Pawn}" 
+                <TextBlock x:Name="Txt_Ply2Pawn0" Text="{x:Static local:Res.wht_Pawn}" 
                            FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply2Pawn1" Grid.Column="6" Grid.Row="1" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Pawn 1:-->
-                <TextBlock x:Name="Txt_Ply2Pawn1" Text="{x:Static local:Resources.wht_Pawn}" 
+                <TextBlock x:Name="Txt_Ply2Pawn1" Text="{x:Static local:Res.wht_Pawn}" 
                            FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply2Pawn2" Grid.Column="6" Grid.Row="2" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Pawn 2:-->
-                <TextBlock x:Name="Txt_Ply2Pawn2" Text="{x:Static local:Resources.wht_Pawn}" 
+                <TextBlock x:Name="Txt_Ply2Pawn2" Text="{x:Static local:Res.wht_Pawn}" 
                            FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply2Pawn3" Grid.Column="6" Grid.Row="3" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Pawn 3:-->
-                <TextBlock x:Name="Txt_Ply2Pawn3" Text="{x:Static local:Resources.wht_Pawn}" 
+                <TextBlock x:Name="Txt_Ply2Pawn3" Text="{x:Static local:Res.wht_Pawn}" 
                            FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply2Pawn4" Grid.Column="6" Grid.Row="4" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Pawn 4:-->
-                <TextBlock x:Name="Txt_Ply2Pawn4" Text="{x:Static local:Resources.wht_Pawn}" 
+                <TextBlock x:Name="Txt_Ply2Pawn4" Text="{x:Static local:Res.wht_Pawn}" 
                            FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply2Pawn5" Grid.Column="6" Grid.Row="5" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Pawn 5:-->
-                <TextBlock x:Name="Txt_Ply2Pawn5" Text="{x:Static local:Resources.wht_Pawn}" 
+                <TextBlock x:Name="Txt_Ply2Pawn5" Text="{x:Static local:Res.wht_Pawn}" 
                            FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply2Pawn6" Grid.Column="6" Grid.Row="6" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Pawn 6:-->
-                <TextBlock x:Name="Txt_Ply2Pawn6" Text="{x:Static local:Resources.wht_Pawn}" 
+                <TextBlock x:Name="Txt_Ply2Pawn6" Text="{x:Static local:Res.wht_Pawn}" 
                            FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply2Pawn7" Grid.Column="6" Grid.Row="7" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Pawn 7:-->
-                <TextBlock x:Name="Txt_Ply2Pawn7" Text="{x:Static local:Resources.wht_Pawn}" 
+                <TextBlock x:Name="Txt_Ply2Pawn7" Text="{x:Static local:Res.wht_Pawn}" 
                            FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
 
             <Button x:Name="Btn_Ply2Rook1" Grid.Column="7" Grid.Row="0" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Rook Top:-->
-                <TextBlock x:Name="Txt_Ply2Rook1" Text="{x:Static local:Resources.wht_Rook}" 
+                <TextBlock x:Name="Txt_Ply2Rook1" Text="{x:Static local:Res.wht_Rook}" 
                            FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply2Knight1" Grid.Column="7" Grid.Row="1" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Knight Top:-->
-                <TextBlock x:Name="Txt_Ply2Knight1" Text="{x:Static local:Resources.wht_Knight}" 
+                <TextBlock x:Name="Txt_Ply2Knight1" Text="{x:Static local:Res.wht_Knight}" 
                            FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply2Bishop1" Grid.Column="7" Grid.Row="2" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Bishop Top:-->
-                <TextBlock x:Name="Txt_Ply2Bishop1" Text="{x:Static local:Resources.wht_Bishop}" 
+                <TextBlock x:Name="Txt_Ply2Bishop1" Text="{x:Static local:Res.wht_Bishop}" 
                            FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply2Queen" Grid.Column="7" Grid.Row="3" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Queen:-->
-                <TextBlock x:Name="Txt_Ply2Queen" Text="{x:Static local:Resources.wht_Queen}" 
+                <TextBlock x:Name="Txt_Ply2Queen" Text="{x:Static local:Res.wht_Queen}" 
                            FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply2King" Grid.Column="7" Grid.Row="4" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--King:-->
-                <TextBlock x:Name="Txt_Ply2King" Text="{x:Static local:Resources.wht_King}" 
+                <TextBlock x:Name="Txt_Ply2King" Text="{x:Static local:Res.wht_King}" 
                            FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply2Bishop2" Grid.Column="7" Grid.Row="5" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Bishop Bottom:-->
-                <TextBlock x:Name="Txt_Ply2Bishop2" Text="{x:Static local:Resources.wht_Bishop}" 
+                <TextBlock x:Name="Txt_Ply2Bishop2" Text="{x:Static local:Res.wht_Bishop}" 
                            FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply2Knight2" Grid.Column="7" Grid.Row="6" Background="{x:Null}" BorderBrush="{x:Null}" >
                 <!--Knight Bottom:-->
-                <TextBlock x:Name="Txt_Ply2Knight2" Text="{x:Static local:Resources.wht_Knight}" 
+                <TextBlock x:Name="Txt_Ply2Knight2" Text="{x:Static local:Res.wht_Knight}" 
                            FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
             <Button x:Name="Btn_Ply2Rook2" Grid.Column="7" Grid.Row="7" Background="{x:Null}" BorderBrush="{x:Null}">
                 <!--Rook Bottom:-->
-                <TextBlock x:Name="Txt_Ply2Rook2" Text="{x:Static local:Resources.wht_Rook}" 
+                <TextBlock x:Name="Txt_Ply2Rook2" Text="{x:Static local:Res.wht_Rook}" 
                            FontSize="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
 

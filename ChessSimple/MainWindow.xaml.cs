@@ -28,11 +28,23 @@ namespace ChessSimple
 
         private void Btn_StartStop_Click(object sender, RoutedEventArgs e)
         {
-            ChessPiece[,] board = Board.createGame(true);
-            Pawn test = (Pawn) board[6, 5];
-
-            test.movePawn(board);
-
+            bool ply1White = true;
+            try
+            {
+#pragma warning disable CS8629 // Nullable value type may be null.
+                ply1White = (bool) Rb_Wply1.IsChecked;
+#pragma warning restore CS8629 // Nullable value type may be null.
+            }
+            catch (Exception ex)
+            {
+                //If an error occurs, output to the user:
+                MessageBox.Show("An unexpected error has occured. \n--------------------------- \nDetails: \n" + ex.Message, 
+                    "Player Colour Selection Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            
+            Board newGame = new(true);
+            ChessPiece[,] board = newGame.createGame(ply1White);
+            ConfigColours(ply1White);
             
 
         }
@@ -46,6 +58,122 @@ namespace ChessSimple
             }
         }
 
+        //Front end for chess pieces:
+        private void ConfigColours(bool white)
+        {
+            if (white)
+            {
+                /*
+                 * PLAYER 1:
+                 */
+                //Pawns:
+                Txt_Ply1Pawn0.Text = Res.wht_Pawn; Txt_Ply1Pawn0.FontSize = 100;
+                Txt_Ply1Pawn1.Text = Res.wht_Pawn; Txt_Ply1Pawn1.FontSize = 100;
+                Txt_Ply1Pawn2.Text = Res.wht_Pawn; Txt_Ply1Pawn2.FontSize = 100;
+                Txt_Ply1Pawn3.Text = Res.wht_Pawn; Txt_Ply1Pawn3.FontSize = 100;
+                Txt_Ply1Pawn4.Text = Res.wht_Pawn; Txt_Ply1Pawn4.FontSize = 100;
+                Txt_Ply1Pawn5.Text = Res.wht_Pawn; Txt_Ply1Pawn5.FontSize = 100;
+                Txt_Ply1Pawn6.Text = Res.wht_Pawn; Txt_Ply1Pawn6.FontSize = 100;
+                Txt_Ply1Pawn7.Text = Res.wht_Pawn; Txt_Ply1Pawn7.FontSize = 100;
+                //Rooks:
+                Txt_Ply1Rook1.Text = Res.wht_Rook;
+                Txt_Ply1Rook2.Text = Res.wht_Rook;
+                //Knights:
+                Txt_Ply1Knight1.Text = Res.wht_Knight;
+                Txt_Ply1Knight2.Text = Res.wht_Knight;
+                //Bishops:
+                Txt_Ply1Bishop1.Text = Res.wht_Bishop;
+                Txt_Ply1Bishop2.Text = Res.wht_Bishop;
+                //Queen:
+                Txt_Ply1Queen.Text = Res.wht_Queen;
+                //King:
+                Txt_Ply1King.Text = Res.wht_King;
+
+                /*
+                 * PLAYER 2:
+                 */
+                //Pawns:
+                Txt_Ply2Pawn0.Text = Res.blk_Pawn; Txt_Ply2Pawn0.FontSize = 70;
+                Txt_Ply2Pawn1.Text = Res.blk_Pawn; Txt_Ply2Pawn1.FontSize = 70;
+                Txt_Ply2Pawn2.Text = Res.blk_Pawn; Txt_Ply2Pawn2.FontSize = 70;
+                Txt_Ply2Pawn3.Text = Res.blk_Pawn; Txt_Ply2Pawn3.FontSize = 70;
+                Txt_Ply2Pawn4.Text = Res.blk_Pawn; Txt_Ply2Pawn4.FontSize = 70;
+                Txt_Ply2Pawn5.Text = Res.blk_Pawn; Txt_Ply2Pawn5.FontSize = 70;
+                Txt_Ply2Pawn6.Text = Res.blk_Pawn; Txt_Ply2Pawn6.FontSize = 70;
+                Txt_Ply2Pawn7.Text = Res.blk_Pawn; Txt_Ply2Pawn7.FontSize = 70;
+                //Rooks:
+                Txt_Ply2Rook1.Text = Res.blk_Rook;
+                Txt_Ply2Rook2.Text = Res.blk_Rook;
+                //Knights:
+                Txt_Ply2Knight1.Text = Res.blk_Knight;
+                Txt_Ply2Knight2.Text = Res.blk_Knight;
+                //Bishops:
+                Txt_Ply2Bishop1.Text = Res.blk_Bishop;
+                Txt_Ply2Bishop2.Text = Res.blk_Bishop;
+                //Queen:
+                Txt_Ply2Queen.Text = Res.blk_Queen;
+                //King:
+                Txt_Ply2King.Text = Res.blk_King;
+            }
+            else
+            {
+                /*
+                 * PLAYER 1:
+                 */
+                //Pawns:
+                Txt_Ply1Pawn0.Text = Res.blk_Pawn; Txt_Ply1Pawn0.FontSize = 70;
+                Txt_Ply1Pawn1.Text = Res.blk_Pawn; Txt_Ply1Pawn1.FontSize = 70;
+                Txt_Ply1Pawn2.Text = Res.blk_Pawn; Txt_Ply1Pawn2.FontSize = 70;
+                Txt_Ply1Pawn3.Text = Res.blk_Pawn; Txt_Ply1Pawn3.FontSize = 70;
+                Txt_Ply1Pawn4.Text = Res.blk_Pawn; Txt_Ply1Pawn4.FontSize = 70;
+                Txt_Ply1Pawn5.Text = Res.blk_Pawn; Txt_Ply1Pawn5.FontSize = 70;
+                Txt_Ply1Pawn6.Text = Res.blk_Pawn; Txt_Ply1Pawn6.FontSize = 70;
+                Txt_Ply1Pawn7.Text = Res.blk_Pawn; Txt_Ply1Pawn7.FontSize = 70;
+                //Rooks:
+                Txt_Ply1Rook1.Text = Res.blk_Rook;
+                Txt_Ply1Rook2.Text = Res.blk_Rook;
+                //Knights:
+                Txt_Ply1Knight1.Text = Res.blk_Knight;
+                Txt_Ply1Knight2.Text = Res.blk_Knight;
+                //Bishops:
+                Txt_Ply1Bishop1.Text = Res.blk_Bishop;
+                Txt_Ply1Bishop2.Text = Res.blk_Bishop;
+                //Queen:
+                Txt_Ply1Queen.Text = Res.blk_Queen;
+                //King:
+                Txt_Ply1King.Text = Res.blk_King;
+
+                /*
+                 * PLAYER 1:
+                 */
+                //Pawns:
+                Txt_Ply2Pawn0.Text = Res.wht_Pawn; Txt_Ply2Pawn0.FontSize = 100;
+                Txt_Ply2Pawn1.Text = Res.wht_Pawn; Txt_Ply2Pawn1.FontSize = 100;
+                Txt_Ply2Pawn2.Text = Res.wht_Pawn; Txt_Ply2Pawn2.FontSize = 100;
+                Txt_Ply2Pawn3.Text = Res.wht_Pawn; Txt_Ply2Pawn3.FontSize = 100;
+                Txt_Ply2Pawn4.Text = Res.wht_Pawn; Txt_Ply2Pawn4.FontSize = 100;
+                Txt_Ply2Pawn5.Text = Res.wht_Pawn; Txt_Ply2Pawn5.FontSize = 100;
+                Txt_Ply2Pawn6.Text = Res.wht_Pawn; Txt_Ply2Pawn6.FontSize = 100;
+                Txt_Ply2Pawn7.Text = Res.wht_Pawn; Txt_Ply2Pawn7.FontSize = 100;
+                //Rooks:
+                Txt_Ply2Rook1.Text = Res.wht_Rook;
+                Txt_Ply2Rook2.Text = Res.wht_Rook;
+                //Knights:
+                Txt_Ply2Knight1.Text = Res.wht_Knight;
+                Txt_Ply2Knight2.Text = Res.wht_Knight;
+                //Bishops:
+                Txt_Ply2Bishop1.Text = Res.wht_Bishop;
+                Txt_Ply2Bishop2.Text = Res.wht_Bishop;
+                //Queen:
+                Txt_Ply2Queen.Text = Res.wht_Queen;
+                //King:
+                Txt_Ply2King.Text = Res.wht_King;
+            }
+            
+        }
+
+
+        //Check Boxes:
         private void Rb_Wply1_Click(object sender, RoutedEventArgs e)
         {
             if(Rb_Wply1.IsChecked == true)

@@ -39,9 +39,14 @@ namespace ChessSimple
         }
 
 
-        public static ChessPiece[,] createGame(bool ply1)
+        public ChessPiece[,] createGame(bool ply1)
         {
-            ChessPiece[,] board = new ChessPiece[8,8];
+
+            /*
+             * NOTE: -- Front end under 'MainWindow.xaml.cs' file --
+             * BACK END:
+             */
+            ChessPiece[,] board = new ChessPiece[8, 8];
 
             //Create player 1 (ply1) pieces on the left side.
             //Add back row pieces:

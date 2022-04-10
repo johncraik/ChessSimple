@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ChessSimple
 {
-    public static class Resources
+    internal static class Res
     {
         public static SolidColorBrush blk_Board = new SolidColorBrush(Color.FromRgb(84, 153, 104));
         public static SolidColorBrush wht_Board = new SolidColorBrush(Color.FromRgb(230, 230, 230));
