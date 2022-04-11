@@ -72,6 +72,44 @@ namespace ChessSimple
             }
         }
 
+        public static Tuple<int, string>? DbGetPlayer(OleDbConnection conDb, string ply)
+        {
+            OleDbCommand cmd = null;
+            OleDbDataReader rdr = null;
+
+            try
+            {
+                /*
+                 * SEARCH CURRENT PLAYERS:
+                 * (Cannot have duplicate players)
+                 */
+                cmd = new OleDbCommand("SELECT * FROM Tbl_Players WHERE PlyName = '" + ply + "';", conDb);
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    int id = rdr.GetInt32(0);
+                    string name = rdr.GetString(1);
+                    if (name == ply)
+                    {
+                        return Tuple.Create(id, name);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //If an error occurs, output to the console:
+                Console.WriteLine("Unexpected Error has occured." +
+                    "\n----------------------------------\nDetails:\n" + ex.Message);
+                return null;
+            }
+            finally
+            {
+                if (cmd != null) cmd.Dispose();
+                if (rdr != null) rdr.Close();
+            }
+            return null; //Not in database
+        }
+
         public static void DbAddNewPlayer(OleDbConnection conDb, string ply)
         {
             OleDbCommand cmd = null;
@@ -83,16 +121,11 @@ namespace ChessSimple
                  * SEARCH CURRENT PLAYERS:
                  * (Cannot have duplicate players)
                  */
-                cmd = new OleDbCommand("SELECT * FROM Tbl_Players;", conDb);
-                rdr = cmd.ExecuteReader();
-                while (rdr.Read())
+                Tuple<int, string> player = DbGetPlayer(conDb, ply);
+                if (player != null)
                 {
-                    if (rdr.GetString(1) == ply)
-                    {
-                        //If player already exists, do nothing (return).
-                        Console.WriteLine("Player already added to database.");
-                        return;
-                    }
+                    Console.WriteLine("Player already exists in database.");
+                    return;
                 }
 
                 /*
