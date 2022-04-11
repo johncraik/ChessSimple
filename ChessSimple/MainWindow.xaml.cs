@@ -28,6 +28,8 @@ namespace ChessSimple
 
         private void Btn_StartStop_Click(object sender, RoutedEventArgs e)
         {
+            string player1 = "ERROR - NO PLAYER";
+            string player2 = "ERROR - NO PLAYER";
             bool ply1White = true;
             try
             {
@@ -42,6 +44,12 @@ namespace ChessSimple
                     "Player Colour Selection Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             
+            /*
+             * CREATE NEW GAME:
+             * 1) Initialise new object as board [active = true]
+             * 2) Create a new game using 'createGame' func [pl1White = local variable]
+             * 3) Config player colours based on ply1White
+             */
             Board newGame = new(true);
             ChessPiece[,] board = newGame.createGame(ply1White);
             ConfigColours(ply1White);
