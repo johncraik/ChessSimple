@@ -36,6 +36,24 @@ namespace ChessSimple
 #pragma warning disable CS8629 // Nullable value type may be null.
                 ply1White = (bool) Rb_Wply1.IsChecked;
 #pragma warning restore CS8629 // Nullable value type may be null.
+
+                if (Tb_ply1.Text != "")
+                {
+                    player1 = Tb_ply1.Text;
+                }
+                else
+                {
+
+                }
+
+                if (Tb_ply2.Text != "")
+                {
+                    player2 = Tb_ply2.Text;
+                }
+                else
+                {
+
+                }
             }
             catch (Exception ex)
             {
@@ -53,8 +71,8 @@ namespace ChessSimple
             Board newGame = new(true);
             ChessPiece[,] board = newGame.createGame(ply1White);
             ConfigColours(ply1White);
-            
 
+            
         }
 
         private void Btn_Quit_Click(object sender, RoutedEventArgs e)
