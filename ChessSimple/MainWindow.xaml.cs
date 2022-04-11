@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.OleDb;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,9 @@ namespace ChessSimple
             string player1 = "ERROR - NO PLAYER";
             string player2 = "ERROR - NO PLAYER";
             bool ply1White = true;
+            Tb_ply1.BorderBrush = new SolidColorBrush(Color.FromRgb(0, 0, 0));
+            Tb_ply2.BorderBrush = new SolidColorBrush(Color.FromRgb(0, 0, 0));
+
             try
             {
 #pragma warning disable CS8629 // Nullable value type may be null.
@@ -39,20 +43,28 @@ namespace ChessSimple
 
                 if (Tb_ply1.Text != "")
                 {
+                    //If player 1 text box is not empty, store the name:
                     player1 = Tb_ply1.Text;
                 }
                 else
                 {
-
+                    //If player 1 text box is empty, return an error:
+                    Tb_ply1.BorderBrush = new SolidColorBrush(Color.FromRgb(255, 0, 0));
+                    MessageBox.Show("Please enter in valid name for player 1.", "Player 1 Invalid", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
                 }
 
                 if (Tb_ply2.Text != "")
                 {
+                    //If player 2 text box is not empty, store the name:
                     player2 = Tb_ply2.Text;
                 }
                 else
                 {
-
+                    //If player 2 text box is empty, return an error:
+                    Tb_ply2.BorderBrush = new SolidColorBrush(Color.FromRgb(255, 0, 0));
+                    MessageBox.Show("Please enter in valid name for player 2.", "Player 2 Invalid", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
                 }
             }
             catch (Exception ex)
@@ -71,8 +83,12 @@ namespace ChessSimple
             Board newGame = new(true);
             ChessPiece[,] board = newGame.createGame(ply1White);
             ConfigColours(ply1White);
+            OleDbConnection dbConnection = Res.DbConnection();
 
-            
+            if (dbConnection != null)
+            {
+
+            }
         }
 
         private void Btn_Quit_Click(object sender, RoutedEventArgs e)

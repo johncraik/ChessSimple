@@ -10,10 +10,11 @@ namespace ChessSimple
 {
     internal static class Res
     {
+        //Chess board colours:
         public static SolidColorBrush blk_Board = new SolidColorBrush(Color.FromRgb(84, 153, 104));
         public static SolidColorBrush wht_Board = new SolidColorBrush(Color.FromRgb(230, 230, 230));
 
-
+        //Unicode for all the chess pieces:
         public const string blk_Pawn = "\u265F";
         public const string blk_Rook = "\u265C";
         public const string blk_Bishop = "\u265D";
@@ -28,6 +29,10 @@ namespace ChessSimple
         public const string wht_Queen = "\u2655";
         public const string wht_King = "\u2654";
 
+        /// <summary>
+        /// Connect to external database. Will return a connection if successful. Null if an error occured.
+        /// </summary>
+        /// <returns></returns>
         public static OleDbConnection? DbConnection()
         {
             try
