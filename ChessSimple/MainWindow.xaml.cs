@@ -35,6 +35,7 @@ namespace ChessSimple
             Tb_ply1.BorderBrush = new SolidColorBrush(Color.FromRgb(0, 0, 0));
             Tb_ply2.BorderBrush = new SolidColorBrush(Color.FromRgb(0, 0, 0));
 
+            //Obtain data from UI:
             try
             {
 #pragma warning disable CS8629 // Nullable value type may be null.
@@ -89,6 +90,11 @@ namespace ChessSimple
             {
                 Res.DbAddNewPlayer(dbConnection, player1);
                 Res.DbAddNewPlayer(dbConnection, player2);
+
+                int ply1ID = Res.DbGetPlayerID(dbConnection, player1);
+                int ply2ID = Res.DbGetPlayerID(dbConnection, player2);
+                MessageBox.Show("Player 1\nName: " + player1 + ".\nID: " + ply1ID 
+                    + ".\n------------------------------\nPlayer 2\nName: " + player2 + ".\nID: " + ply2ID + ".");
             }
         }
 
