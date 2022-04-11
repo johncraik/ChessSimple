@@ -29,9 +29,6 @@ namespace ChessSimple
 
         private void Btn_StartStop_Click(object sender, RoutedEventArgs e)
         {
-            string player1 = "ERROR - NO PLAYER";
-            string player2 = "ERROR - NO PLAYER";
-            bool ply1White = true;
             Tb_ply1.BorderBrush = new SolidColorBrush(Color.FromRgb(0, 0, 0));
             Tb_ply2.BorderBrush = new SolidColorBrush(Color.FromRgb(0, 0, 0));
 
@@ -39,13 +36,13 @@ namespace ChessSimple
             try
             {
 #pragma warning disable CS8629 // Nullable value type may be null.
-                ply1White = (bool) Rb_Wply1.IsChecked;
+                Res.ply1White = (bool) Rb_Wply1.IsChecked;
 #pragma warning restore CS8629 // Nullable value type may be null.
 
                 if (Tb_ply1.Text != "")
                 {
                     //If player 1 text box is not empty, store the name:
-                    player1 = Tb_ply1.Text;
+                    Res.player1 = Tb_ply1.Text;
                 }
                 else
                 {
@@ -58,7 +55,7 @@ namespace ChessSimple
                 if (Tb_ply2.Text != "")
                 {
                     //If player 2 text box is not empty, store the name:
-                    player2 = Tb_ply2.Text;
+                    Res.player2 = Tb_ply2.Text;
                 }
                 else
                 {
@@ -74,28 +71,29 @@ namespace ChessSimple
                 MessageBox.Show("An unexpected error has occured. \n--------------------------- \nDetails: \n" + ex.Message, 
                     "Player Colour Selection Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            
+
             /*
              * CREATE NEW GAME:
              * 1) Initialise new object as board [active = true]
              * 2) Create a new game using 'createGame' func [pl1White = local variable]
              * 3) Config player colours based on ply1White
              */
-            Board newGame = new(true);                              //Back end (initialisation of new game)
-            ChessPiece[,] board = newGame.createGame(ply1White);    //Back end (create board)
-            ConfigColours(ply1White);                               //Front end (create board)
-            OleDbConnection dbConnection = Res.DbConnection();      //Back end (database connection)
+            Res.game.setActive(true);                           //Start new game.
+            Board newGame = Res.game;                           //Back end (initialisation of new game)
+            Res.board = newGame.createGame(Res.ply1White);      //Back end (create board)
+            ConfigColours(Res.ply1White);                       //Front end (create board)
+            OleDbConnection dbConnection = Res.DbConnection();  //Back end (database connection)
 
             //If the database is connected successfuly:
             if (dbConnection != null)
             {
                 //Add new players into the database:
-                Res.DbAddNewPlayer(dbConnection, player1);
-                Res.DbAddNewPlayer(dbConnection, player2);
+                Res.DbAddNewPlayer(dbConnection, Res.player1);
+                Res.DbAddNewPlayer(dbConnection, Res.player2);
             }
-            else { return; } //return if connection is null.
+            else { return; } //return if connection is null.                      
 
-
+            
         }
 
         private void Btn_Quit_Click(object sender, RoutedEventArgs e)
@@ -293,6 +291,34 @@ namespace ChessSimple
                 Rb_Bply1.IsChecked = true;
                 Rb_Wply1.IsChecked = false;
             }
+        }
+
+        private void ChessPiece_Click(object sender, RoutedEventArgs e)
+        {
+            Button piece = (Button)sender;
+            string objName = piece.Name;
+            bool isPawn = objName.Contains("Pawn");
+            if (isPawn)
+            {
+                int index = objName.IndexOf("Pawn");
+                int id = Convert.ToInt32(objName.Substring(index +4, 1));
+                int ply = Convert.ToInt32(objName.Substring(index - 1, 1));
+
+                bool isWhite = Res.ply1White;
+                if (ply == 2)
+                {
+                    isWhite = !Res.ply1White;
+                }
+                Pawn? pawn = Res.findPawn(Res.board, id, isWhite);
+                if (pawn != null)
+                {
+                    Res.game.createMoveableSqrs(pawn.movePawn(Res.board), Gd_Board);
+                }
+            }
+            
+
+
+            
         }
     }
 }

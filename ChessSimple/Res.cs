@@ -30,6 +30,51 @@ namespace ChessSimple
         public const string wht_Queen = "\u2655";
         public const string wht_King = "\u2654";
 
+        //Global Variables:
+        public static Board game = new (false);
+        public static ChessPiece[,] board = new ChessPiece[8,8];
+        public static string player1 = "ERROR - NO PLAYER";
+        public static string player2 = "ERROR - NO PLAYER";
+        public static bool ply1White = true;
+
+        //Global Funcs:
+        public static Pawn? findPawn(ChessPiece[,] board, int id, bool ply1)
+        {
+            Pawn pawn = null;
+            int i = 0; int j = 0;
+            foreach(ChessPiece p in board)
+            {
+                try
+                {
+                    pawn = (Pawn)p;
+                    if (pawn != null)
+                    {
+                        if (pawn.getID() == id && pawn.getIsWhite() == ply1)
+                        {
+                            return pawn;
+                        }
+                    }
+                }
+                catch 
+                {
+                    Console.WriteLine("Piece is not a pawn.");
+                }
+
+                //Increment Y axis:
+                j++;
+                if (j == 8)
+                {
+                    //If at the end of the board (j = 8),
+                    //THEN reset the Y axis and increment the X axis.
+                    j = 0;
+                    i++;
+                }
+            }
+
+            return pawn;
+        }
+
+
         /// <summary>
         /// Connect to external database. Will return a connection if successful. Null if an error occured.
         /// </summary>

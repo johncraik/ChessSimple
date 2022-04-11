@@ -57,6 +57,13 @@ namespace ChessSimple
             int i = 0; int j = 0;
             foreach(ChessPiece p in board)
             {
+                if (i == pX || j == pY)
+                {
+                    //If square is in a straight line from rook,
+                    //moveable is true.
+                    moveable[i, j] = true;
+                }
+
                 //Increment Y axis:
                 j++;
                 if (j == 8)

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace ChessSimple
 {
@@ -97,6 +99,33 @@ namespace ChessSimple
             board[x, y] = new Rook(new Point(x, y), ply2, rook); rook++; y++;       //Rook
 
             return board;
+        }
+
+        public void createMoveableSqrs(bool[,] moveable, Grid board)
+        {
+            int i = 0; int j = 0;
+            foreach(bool move in moveable)
+            {
+                if (move == true)
+                {
+                    Button btn = new();
+                    btn.Name = "Btn_Test";
+                    btn.Background = new SolidColorBrush(Color.FromRgb(255,0,0));
+                    board.Children.Add(btn);
+                    Grid.SetColumn(btn, i);
+                    Grid.SetRow(btn, j);
+                }
+
+                //Increment Y axis:
+                j++;
+                if (j == 8)
+                {
+                    //If at the end of the board (j = 8),
+                    //THEN reset the Y axis and increment the X axis.
+                    j = 0;
+                    i++;
+                }
+            }
         }
     }
 }
