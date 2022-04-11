@@ -85,10 +85,11 @@ namespace ChessSimple
             ConfigColours(ply1White);
             OleDbConnection dbConnection = Res.DbConnection();
 
-            if (dbConnection != null)
+            /*if (dbConnection != null)
             {
-
-            }
+                Res.DbAddNewPlayer(dbConnection, player1);
+                Res.DbAddNewPlayer(dbConnection, player2);
+            }*/
         }
 
         private void Btn_Quit_Click(object sender, RoutedEventArgs e)

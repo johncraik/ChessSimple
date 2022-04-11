@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.OleDb;
+using System.Data;
 
 namespace ChessSimple
 {
@@ -48,12 +49,14 @@ namespace ChessSimple
 
                 try
                 {
+                    //Open the database connection:
                     conDb.Open();
                     Console.WriteLine("Connection was successful.");
                     return conDb;
                 }
                 catch (Exception ex)
                 {
+                    //If an error occurs, output to the console:
                     Console.WriteLine("Unexpected Error has occured. The database could not be opened." +
                     "\n----------------------------------\nDetails:\n" + ex.Message);
                     return null;
@@ -62,9 +65,54 @@ namespace ChessSimple
             }
             catch (Exception ex)
             {
+                //If an error occurs, output to the console:
                 Console.WriteLine("Unexpected Error has occured. Connection string may be invalid." +
                     "\n----------------------------------\nDetails:\n" + ex.Message);
                 return null;
+            }
+        }
+
+        public static void DbAddNewPlayer(OleDbConnection conDb, string ply)
+        {
+            OleDbCommand cmd = null;
+            OleDbDataReader rdr = null;
+
+            try
+            {
+                /*
+                 * SEARCH CURRENT PLAYERS:
+                 * (Cannot have duplicate players)
+                 */
+                cmd = new OleDbCommand("SELECT * FROM Tbl_Players;", conDb);
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    if (rdr.GetString(1) == ply)
+                    {
+                        //If player already exists, do nothing (return).
+                        Console.WriteLine("Player already added to database.");
+                        return;
+                    }
+                }
+
+                /*
+                 * ADD NEW PLAYER:
+                 * (If the player does not exist, add them)
+                 */
+                cmd = new OleDbCommand("INSERT INTO Tbl_Players (PlyName) VALUES ('" + ply + "');", conDb);
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Player added to database successfully.");
+            }
+            catch (Exception ex)
+            {
+                //If an error occurs, output to the console:
+                Console.WriteLine("Unexpected Error has occured." +
+                    "\n----------------------------------\nDetails:\n" + ex.Message);
+            }
+            finally
+            {
+                if (cmd != null) cmd.Dispose();
+                if (rdr != null) rdr.Close();
             }
         }
     }
