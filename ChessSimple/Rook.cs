@@ -54,30 +54,9 @@ namespace ChessSimple
             int pY = this.getY();
             bool[,] moveable = new bool[8, 8];
 
-            int i = 0; int j = 0; 
-            int iMax = 7 - pX; int jMax = 7 - pY;
-            foreach (ChessPiece p in board)
+            int i = 0; int j = 0;
+            foreach(ChessPiece p in board)
             {
-                //Loop through the board.
-                if (i == pX || j == pY)
-                {
-                    moveable[i, j] = true;
-                }
-
-
-                if (p.getIsWhite() != this.getIsWhite())
-                {
-                    if (i == pX || j == pY)
-                    {
-                        moveable[i, j] = true;
-                    }
-
-                }
-                else
-                {
-                    moveable[i, j] = false;
-                }
-
                 //Increment Y axis:
                 j++;
                 if (j == 8)

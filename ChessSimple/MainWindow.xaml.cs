@@ -81,21 +81,21 @@ namespace ChessSimple
              * 2) Create a new game using 'createGame' func [pl1White = local variable]
              * 3) Config player colours based on ply1White
              */
-            Board newGame = new(true);
-            ChessPiece[,] board = newGame.createGame(ply1White);
-            ConfigColours(ply1White);
-            OleDbConnection dbConnection = Res.DbConnection();
+            Board newGame = new(true);                              //Back end (initialisation of new game)
+            ChessPiece[,] board = newGame.createGame(ply1White);    //Back end (create board)
+            ConfigColours(ply1White);                               //Front end (create board)
+            OleDbConnection dbConnection = Res.DbConnection();      //Back end (database connection)
 
+            //If the database is connected successfuly:
             if (dbConnection != null)
             {
+                //Add new players into the database:
                 Res.DbAddNewPlayer(dbConnection, player1);
                 Res.DbAddNewPlayer(dbConnection, player2);
-
-                int ply1ID = Res.DbGetPlayerID(dbConnection, player1);
-                int ply2ID = Res.DbGetPlayerID(dbConnection, player2);
-                MessageBox.Show("Player 1\nName: " + player1 + ".\nID: " + ply1ID 
-                    + ".\n------------------------------\nPlayer 2\nName: " + player2 + ".\nID: " + ply2ID + ".");
             }
+            else { return; } //return if connection is null.
+
+
         }
 
         private void Btn_Quit_Click(object sender, RoutedEventArgs e)
